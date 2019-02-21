@@ -1,0 +1,6 @@
+男	O	Dan	Male
+雄	Katsu	Yū	Male
+雄	O	Yū	Male
+麻呂	Azanaga	Maro	Self
+麿	Maro	Ma	Self
+丸	Maru	Gan	Round

@@ -1,0 +1,7 @@
+堀内	Horiuchi	Horiuchi	Canal Inner
+井出	Ide	Ide	Well Exit
+井内	Iuchi	Iuchi	Well Inner
+元	Moto	Moto	Source
+小宅	Otaku	Otaku	Small House
+新城	Shinjō	Shinjō	New Castle
+宇宅	Utaku	Utaku	Building House
