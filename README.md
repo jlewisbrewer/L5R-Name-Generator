@@ -1,6 +1,6 @@
 # L5R-Name-Generator
 
-Creates Japanese names based on Legend of the Five Rings roleplaying game.
+Randomly generates a number of Japanese names based on Legend of the Five Rings roleplaying game.
 
 ## Installation
 
