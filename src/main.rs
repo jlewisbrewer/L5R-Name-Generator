@@ -8,7 +8,7 @@ mod classes;
 fn main() {
     println!("L5R Name Generator\n");
     loop {
-        println!("Input [g] to generate name or [a] to add name. Press any 
+        println!("\nInput [g] to generate name or [a] to add name. Press any 
         other key to exit.");
         let mut input = String::new();
 

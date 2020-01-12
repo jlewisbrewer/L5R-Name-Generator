@@ -3,11 +3,9 @@ extern crate rand;
 use std::fs::File;
 use std::fs::OpenOptions;
 use std::path::Path;
-// use std::io::Error;
 use std::io;
 use std::io::prelude::*;
 use std::io::BufReader;
-use self::rand::random;
 
 pub use classes::name::Name as Name;
 pub use classes::clan_name::ClanName as ClanName;
@@ -123,10 +121,10 @@ pub fn add_name_to_file() {
     loop {
         let mut name = String::new();
         let mut input = String::new();
-        let mut kanji = String::new();
-        let mut kunyomi = String::new();
-        let mut onyomi = String::new();
-        let mut english = String::new();
+        let kanji = String::new();
+        let kunyomi = String::new();
+        let onyomi = String::new();
+        let english = String::new();
         let mut sex = String::new();
         let mut name_type = String::new();
         let mut new_word = Name::new();
@@ -196,20 +194,28 @@ pub fn add_name_to_file() {
         }
 
         println!("Enter a kanji: ");
-        io::stdin().read_line(&mut kanji);
-        new_word.kanji = kanji.trim().to_string();
+        new_word.kanji = domain_read_line(kanji);
         println!("Enter the kunyomi: ");
-        io::stdin().read_line(&mut kunyomi);
-        new_word.kunyomi = kunyomi.trim().to_string();
+        new_word.kunyomi = domain_read_line(kunyomi);
         println!("Enter the onyomi: ");
-        io::stdin().read_line(&mut onyomi);
-        new_word.onyomi = onyomi.trim().to_string();
+        new_word.onyomi = domain_read_line(onyomi);
         println!("Enter the english: ");
-        io::stdin().read_line(&mut english);
-        new_word.english = english.trim().to_string();
+        new_word.english = domain_read_line(english);
 
         update_file(&sex, &name_type, new_word);
         println!("File updated!")
 
+    }
+}
+
+fn domain_read_line(mut input: String) -> String {
+    match io::stdin().read_line(&mut input) {
+        Ok(_) => {
+            input.trim().to_string()
+        }
+        Err(error) => {
+            println!("error: {}", error);
+            "".to_string()
+        }
     }
 }

@@ -1,10 +1,5 @@
 extern crate rand;
-use std::fs::File;
-use std::fs::OpenOptions;
-use std::path::Path;
 use std::io;
-use std::io::prelude::*;
-use std::io::BufReader;
 use self::rand::random;
 use domain::get_file_contents;
 pub use classes::name::Name as Name;
@@ -57,10 +52,8 @@ pub fn generate_name<'a>(sex: &str)-> Name {
                 }
                 // Name is prefix and zokumyou and yobina_suffix
                 4 => {
-                    let mut temp_name = Name::new();
-                    let mut temp_zokumyou = Name::new();
-                    temp_name = get_random_name(&male_prefixes);
-                    temp_zokumyou = get_random_name(&male_zokumyou);
+                    let mut temp_name = get_random_name(&male_prefixes);
+                    let mut temp_zokumyou = get_random_name(&male_zokumyou);
                     prefix = Name::new();
                     prefix.kanji = format!("{}{}", temp_name.kanji, temp_zokumyou.kanji.to_lowercase());
                     prefix.kunyomi = format!("{}{}", temp_name.kunyomi, temp_zokumyou.kunyomi.to_lowercase());
@@ -165,13 +158,13 @@ pub fn user_generate_name() {
     let mut name = ClanName::new(clan_name);
     name.surname = choose_clan_name(&name.clan.to_lowercase());
 
-    println!("How many names do you want to generate? :");
+    println!("\nHow many names do you want to generate? :");
     match io::stdin().read_line(&mut input) {
         Ok(_) => { number = input.trim().parse::<usize>().unwrap();}
         Err(error) => println!("error: {}", error),
     };
                         
-    println!("[m]ale or [f]emale names: ");
+    println!("\n[m]ale or [f]emale names: ");
     match io::stdin().read_line(&mut sex) {
         Ok(_) => {
             match sex.trim().as_ref() {
