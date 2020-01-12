@@ -1,13 +1,9 @@
-// #[macro_use]
 extern crate rand;
 use std::io;
 
 mod presentation;
+mod domain;
 mod classes;
-// // pub use classes::name::Name;
-// // pub use classes::clan_name::ClanName;
-
-
 
 fn main() {
     println!("L5R Name Generator\n");
@@ -23,7 +19,7 @@ fn main() {
                         presentation::user_generate_name();
                     }
                     "a" => {
-                        presentation::add_name_to_file();
+                        domain::add_name_to_file();
                     }
                     _ => break,
                 };
