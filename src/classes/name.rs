@@ -1,5 +1,3 @@
-// extern crate rand;
-// use rand::random;
 pub struct Name {
     pub kanji: String,
     pub onyomi: String,
