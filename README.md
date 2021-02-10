@@ -77,5 +77,4 @@ Press any key other than `g` or `a` to exit the program.
 
 ### License
 
-This project is covered
-
+This project is available as open source under the terms of the [MIT license](https://opensource.org/licenses/MIT).
