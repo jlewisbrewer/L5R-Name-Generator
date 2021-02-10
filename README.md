@@ -1,4 +1,4 @@
-# L5R-Name-Generator
+# ![L5R-Name-Generator](https://fontmeme.com/permalink/210209/1bb0abe026dcbe92c0921cac6d631be8.png)
 
 Randomly generates a number of Japanese names based on Legend of the Five Rings roleplaying game.
 
@@ -74,4 +74,8 @@ Press `a` on the command line. You will then be asked whether you are adding a c
 ### Exit
 
 Press any key other than `g` or `a` to exit the program.
+
+### License
+
+This project is covered
 
